@@ -1,7 +1,7 @@
 # VoiceAttack references and script snippets
 
 ### Get spoken command as a string.
-This is the exact variant recognised, e.g. if the command phrase is: `step [left;right;up;down] [1..9]` then the spoken command could be `step left 2` or `step up 4` for example. 
+This is the exact variant recognised, e.g. if the command phrase is: `step [left;right;up;down] [1..9]` then the spoken command could be `"step left 2"` or `"step up 4"` for example. 
 ```
 string command = VA.Command.Name();
 ```
@@ -18,7 +18,7 @@ if (command.ToLower().Contains("left")) {
   VA.SetText("DirectionKey", "D");
 } else if (command.ToLower().Contains("forward")) {
   VA.SetText("DirectionKey", "W");	
-} else if (command.ToLower().Contains("back"))		
+} else if (command.ToLower().Contains("back")) {	
   VA.SetText("DirectionKey", "S");					
 }
 ```
@@ -38,7 +38,7 @@ if (command.ToLower().Contains("left")) {
   VA.SetText("DirectionKey", "h");
 } else if (command.ToLower().Contains("forward")) {
   VA.SetText("DirectionKey", "w");	
-} else if (command.ToLower().Contains("back"))		
+} else if (command.ToLower().Contains("back")) {	
   VA.SetText("DirectionKey", "b");					
 }
 ```
@@ -53,7 +53,7 @@ if (command.ToLower().Contains("left")) {
   VA.SetText("DirectionKey", "v");
 } else if (command.ToLower().Contains("forward")) {
   VA.SetText("DirectionKey", "y");	
-} else if (command.ToLower().Contains("back"))		
+} else if (command.ToLower().Contains("back")) {	
   VA.SetText("DirectionKey", "z");					
 }
 ```
