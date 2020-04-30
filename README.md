@@ -5,6 +5,7 @@ This is the exact variant recognised, e.g. if the command phrase is: `step [left
 ```
 string command = VA.Command.Name();
 ```
+This is used in all of the below code snippets, you do not need to use it by itself. 
 
 ### Convert direction to WASD
 If the spoken command contains "left", "right", "forward", "forwards", "backwards" or "back", this will convert to a direction key (W, A, S, D) and save the key name in the variable `DirectionKey`
@@ -55,6 +56,28 @@ if (command.ToLower().Contains("left")) {
   VA.SetText("DirectionKey", "y");	
 } else if (command.ToLower().Contains("back")) {	
   VA.SetText("DirectionKey", "z");					
+}
+```
+
+You would use the output in VoiceAttack, with commands like:
+`Press down variable key(s) [{DirectionKey}]` 
+
+
+
+### Convert direction to arrow keys
+If the spoken command contains "up", "down", "left", "right", convert to arrow keys and save the key name in the variable `DirectionKey`. Note that the keys have specific identifiers and need square brackets. A full list of possible key names can be found in the `Quick Input, Variable Keypress and Hotkey Key Indicators` section of the VoiceAttack manual (press F1 in VoiceAttack, look around page 164). 
+
+```
+string command = VA.Command.Name();
+		
+if (command.ToLower().Contains("left")) {
+  VA.SetText("DirectionKey", "[ARROWL]");
+} else if (command.ToLower().Contains("right")) {
+  VA.SetText("DirectionKey", "[ARROWR]");
+} else if (command.ToLower().Contains("up")) {
+  VA.SetText("DirectionKey", "[ARROWU]");	
+} else if (command.ToLower().Contains("down")) {	
+  VA.SetText("DirectionKey", "[ARROWD]");				
 }
 ```
 
